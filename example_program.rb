@@ -1,6 +1,6 @@
 require_relative 'lib/tuvi.rb'
 
-class Example
+class ExampleProgram
 
   extend Tuvi
 

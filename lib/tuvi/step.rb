@@ -24,4 +24,8 @@ class Step
     @exit_program = true
   end
 
+  def formatted_answers
+    "You can type one of the following: [#{@answer_paths.keys.join(", ")}]"
+  end
+
 end

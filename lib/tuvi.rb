@@ -13,6 +13,7 @@ module Tuvi
     while true do
       puts @steps[current_step].get_message
       exit if @steps[current_step].exit_program
+      puts @steps[current_step].formatted_answers
       input = gets.downcase.chomp
       if @steps[current_step].answer_paths[input]
         current_step = @steps[current_step].answer_paths[input]
