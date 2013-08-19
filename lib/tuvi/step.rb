@@ -2,9 +2,9 @@ class Step
 
   attr_accessor :position
 
-  def initialize(position)
+  def initialize(position, &block)
     @position = position
-    yield self if block_given?
+    instance_eval(&block) if block_given?
   end
 
   def message(text)
