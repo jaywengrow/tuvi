@@ -1,6 +1,6 @@
 # Tuvi
 
-Tuvi is a computer language for kids to create text-based games and applications. It is a Ruby DSL which supplies a declarative format which dictates the flow of the program as a series of steps.
+Tuvi is a computer language for kids to create text-based games and applications. It is a Ruby DSL which provides a simple way to declare the flow of the program as a series of steps. Although the below example demonstrates the use of Tuvi in creating a Choose-Your-Own-Adventure type game, it can be used for any text game or application. Tuvi was written in order to introduce programming to my son, Tuvi!
 
 ## Installation
 
@@ -63,7 +63,9 @@ Every step can establish one or more lines declaring an `answer` which is follow
 
 Some steps, instead of having answers, can simply end the program using the `stop` keyword.
 
-Finally, after all the steps have been declared (but still within the class), use the `run` keyword to run the program.
+Finally, after all the steps have been declared (but still within the class), the `run` keyword actually runs the steps.
+
+You can run this file like any other Ruby file, using `ruby filename.rb`.
 
 ## Contributing
 
