@@ -10,9 +10,9 @@ Install Tuvi simply with:
 
 ## Usage
 
-Here is a basic example with a code walkthrough:
+Here is a basic example program followed by an explanation:
 
-require 'tuvi'
+    require 'tuvi'
 
     class ExampleProgram
 
