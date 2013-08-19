@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tuvi (0.0.1)
+    tuvi (0.0.2)
 
 GEM
   remote: https://rubygems.org/
