@@ -12,8 +12,13 @@ module Tuvi
     current_step = 1
     while true do
       puts @steps[current_step].get_message
-      input = gets.chomp
-      current_step = input.to_i
+      exit if @steps[current_step].exit_program
+      input = gets.downcase.chomp
+      if @steps[current_step].answer_paths[input]
+        current_step = @steps[current_step].answer_paths[input]
+      else
+        puts "Sorry, I don't understand that answer. Please try again:"
+      end
     end
   end
 
