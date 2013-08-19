@@ -16,17 +16,17 @@ describe Tuvi do
 
       it "should return a new step" do
         @program.step(1)
-        @program.instance_eval{@steps.last}.class.should == Step
+        @program.instance_eval{@steps[1]}.class.should == Step
       end
 
       it "should assign number parameter to step's position" do
         @program.step(1)
-        @program.instance_eval{@steps.last}.position.should == 1
+        @program.instance_eval{@steps[1]}.position.should == 1
       end
 
       it "should assign a message based on message passed in block" do
         @program.step(1){|s| s.message "Hello!"}
-        @program.instance_eval{@steps.last}.get_message.should == "Hello!"
+        @program.instance_eval{@steps[1]}.get_message.should == "Hello!"
       end
     end
 

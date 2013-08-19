@@ -4,13 +4,16 @@ require_relative "tuvi/step"
 module Tuvi
 
   def step(position, &block)
-    @steps ||= []
-    @steps << Step.new(position, &block)
+    @steps ||= {}
+    @steps[position] = Step.new(position, &block)
   end
 
   def run
-    @steps.each do |step|
-      puts step.get_message
+    current_step = 1
+    while true do
+      puts @steps[current_step].get_message
+      input = gets.chomp
+      current_step = input.to_i
     end
   end
 

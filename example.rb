@@ -6,6 +6,7 @@ class Example
 
   step 1 do
     message "Howdy"
+    # answer "Yes", 2
   end
 
   step 2 do
