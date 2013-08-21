@@ -19,11 +19,11 @@ module Tuvi
     puts @steps[current_step].get_message
     exit if @steps[current_step].exit_program
     puts @steps[current_step].formatted_answers
-    determine_next_step(current_step)
+    input = gets.downcase.chomp
+    determine_next_step(current_step, input)
   end
 
-  def determine_next_step(current_step)
-    input = gets.downcase.chomp
+  def determine_next_step(current_step, input)
     if @steps[current_step].answer_paths[input]
       next_step = @steps[current_step].answer_paths[input]
     else
