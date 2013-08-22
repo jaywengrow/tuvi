@@ -1,6 +1,5 @@
 require_relative "tuvi/version"
 require_relative "tuvi/step"
-require 'ostruct'
 
 module Tuvi
 
