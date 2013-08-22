@@ -20,6 +20,7 @@ module Tuvi
     exit if @steps[current_step].exit_program
     puts @steps[current_step].formatted_answers
     input = gets.downcase.chomp
+    exit_program if input == "exit"
     determine_next_step(current_step, input)
   end
 
@@ -31,6 +32,11 @@ module Tuvi
       next_step = current_step
     end
     next_step
+  end
+
+  def exit_program
+    puts "Bye!"
+    exit
   end
 
 end
