@@ -34,7 +34,9 @@ module Tuvi
       return current_step.answer_paths[input]
     end
 
-    run_extensions(current_step, input) if respond_to?(:run_extensions)
+    # Allow for extensions
+    next_step_id = run_extensions(current_step, input) if respond_to?(:run_extensions)
+    return next_step_id if next_step_id
 
     puts "Sorry, I don't understand that answer. Please try again:"
     current_step.id
