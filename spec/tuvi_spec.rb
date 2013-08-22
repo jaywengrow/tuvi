@@ -19,9 +19,9 @@ describe Tuvi do
         @program.instance_eval{@steps[1]}.class.should == Step
       end
 
-      it "should assign number parameter to step's position" do
+      it "should assign number parameter to step's id" do
         @program.step(1)
-        @program.instance_eval{@steps[1]}.position.should == 1
+        @program.instance_eval{@steps[1]}.id.should == 1
       end
 
       it "should assign a message based on message passed in block" do

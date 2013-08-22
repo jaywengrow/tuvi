@@ -4,20 +4,20 @@ require 'ostruct'
 
 module Tuvi
 
-  def step(position, &block)
+  def step(id, &block)
     @steps ||= {}
-    @steps[position] = Step.new(position, &block)
+    @steps[id] = Step.new(id, &block)
   end
 
   def run
-    current_step_position = 1
+    current_step_id = 1
     while true do
-      current_step_position = execute_step(current_step_position)
+      current_step_id = execute_step(current_step_id)
     end
   end
 
-  def execute_step(step_position)
-    current_step = @steps[step_position]
+  def execute_step(step_id)
+    current_step = @steps[step_id]
     current_step.code_blocks.each do |block|
       block.call
     end
@@ -37,7 +37,7 @@ module Tuvi
     run_extensions(current_step, input) if respond_to?(:run_extensions)
 
     puts "Sorry, I don't understand that answer. Please try again:"
-    current_step.position
+    current_step.id
   end
 
   def exit_program

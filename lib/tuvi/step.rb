@@ -1,9 +1,9 @@
 class Step
 
-  attr_accessor :position, :answer_paths, :exit_program, :code_blocks
+  attr_accessor :id, :answer_paths, :exit_program, :code_blocks
 
-  def initialize(position, &block)
-    @position = position
+  def initialize(id, &block)
+    @id = id
     @answer_paths = {}
     @code_blocks = []
     instance_eval(&block) if block_given?
