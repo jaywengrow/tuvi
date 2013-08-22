@@ -31,12 +31,11 @@ module Tuvi
 
   def determine_next_step(current_step, input)
     if current_step.answer_paths[input]
-      next_step_position = current_step.answer_paths[input]
-    else
-      puts "Sorry, I don't understand that answer. Please try again:"
-      next_step_position = current_step.position
+      return current_step.answer_paths[input]
     end
-    next_step_position
+
+    puts "Sorry, I don't understand that answer. Please try again:"
+    current_step.position
   end
 
   def exit_program
