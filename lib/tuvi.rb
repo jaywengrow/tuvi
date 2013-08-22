@@ -10,32 +10,33 @@ module Tuvi
   end
 
   def run
-    current_step = 1
+    current_step_position = 1
     while true do
-      current_step = execute_step(current_step)
+      current_step_position = execute_step(current_step_position)
     end
   end
 
-  def execute_step(current_step)
-    @steps[current_step].code_blocks.each do |block|
+  def execute_step(step_position)
+    current_step = @steps[step_position]
+    current_step.code_blocks.each do |block|
       block.call
     end
-    puts @steps[current_step].get_message
-    exit if @steps[current_step].exit_program
-    puts @steps[current_step].formatted_answers
+    puts current_step.get_message
+    exit if current_step.exit_program
+    puts current_step.formatted_answers
     input = gets.downcase.chomp
     exit_program if input == "exit"
     determine_next_step(current_step, input)
   end
 
   def determine_next_step(current_step, input)
-    if @steps[current_step].answer_paths[input]
-      next_step = @steps[current_step].answer_paths[input]
+    if current_step.answer_paths[input]
+      next_step_position = current_step.answer_paths[input]
     else
       puts "Sorry, I don't understand that answer. Please try again:"
-      next_step = current_step
+      next_step_position = current_step.position
     end
-    next_step
+    next_step_position
   end
 
   def exit_program

@@ -44,12 +44,14 @@ describe Tuvi do
 
       it "should determine the next step based on answer paths" do
         @program.step(1){answer "yes", 2}
-        @program.determine_next_step(1, "yes").should == 2
+        current_step = @program.instance_eval{@steps[1]}
+        @program.determine_next_step(current_step, "yes").should == 2
       end
 
       it "should set the next step to be the current step if input is invalid" do
         @program.step(1){answer "yes", 2}
-        @program.determine_next_step(1, "blah").should == 1
+        current_step = @program.instance_eval{@steps[1]}
+        @program.determine_next_step(current_step, "blah").should == 1
       end
 
     end
