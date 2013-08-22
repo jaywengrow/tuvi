@@ -34,6 +34,8 @@ module Tuvi
       return current_step.answer_paths[input]
     end
 
+    run_extensions if respond_to?(:run_extensions)
+
     puts "Sorry, I don't understand that answer. Please try again:"
     current_step.position
   end
