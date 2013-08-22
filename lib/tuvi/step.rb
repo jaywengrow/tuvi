@@ -26,7 +26,7 @@ class Step
   end
 
   def formatted_answers
-    "You can type one of the following: [#{@answer_paths.keys.join(", ")}]"
+    "You can type one of the following: [#{@answer_paths.keys.join(", ")}] Enter 'exit' to quit."
   end
 
   def code(&block)
