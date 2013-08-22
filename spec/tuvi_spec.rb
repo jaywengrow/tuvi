@@ -56,4 +56,13 @@ describe Tuvi do
 
   end
 
+  describe "#code" do
+
+    it "should add blocks to the step's code_blocks" do
+      @program.step(1){code {puts "Hello"} }
+      @program.instance_eval{@steps[1]}.code_blocks[0].should be_a Proc
+    end
+
+  end
+
 end

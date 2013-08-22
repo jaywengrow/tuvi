@@ -62,6 +62,27 @@ Finally, after all the steps have been declared (but still within the class), th
 
 You can run this file like any other Ruby file, using `ruby filename.rb`.
 
+You can also add any custom Ruby code by placing it block passed to the `code` method. Also note that variables should be set as globals. For example:
+
+    step 1 do
+      code {$steps = 1}
+      message "Welcome to KrazyMaze. Will you ever get out? BWAAHAAA! You have a choice to make: Go right or left"
+      answer "right", 2
+      answer "left", 3
+    end
+
+    step 2 do
+      code do
+        $steps += 1
+        puts "You have taken #{$steps} steps."
+      end
+      message "You're in the middle of the maze. Go right or left or straight."
+      answer "right", 3
+      answer "left", 4
+      answer "straight", 3
+    end
+
+
 ## Contributing
 
 1. Fork it

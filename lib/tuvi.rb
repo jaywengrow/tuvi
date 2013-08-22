@@ -1,5 +1,6 @@
 require_relative "tuvi/version"
 require_relative "tuvi/step"
+require 'ostruct'
 
 module Tuvi
 
@@ -16,6 +17,9 @@ module Tuvi
   end
 
   def execute_step(current_step)
+    @steps[current_step].code_blocks.each do |block|
+      block.call
+    end
     puts @steps[current_step].get_message
     exit if @steps[current_step].exit_program
     puts @steps[current_step].formatted_answers

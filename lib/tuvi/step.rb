@@ -1,10 +1,11 @@
 class Step
 
-  attr_accessor :position, :answer_paths, :exit_program
+  attr_accessor :position, :answer_paths, :exit_program, :code_blocks
 
   def initialize(position, &block)
     @position = position
     @answer_paths = {}
+    @code_blocks = []
     instance_eval(&block) if block_given?
   end
 
@@ -26,6 +27,10 @@ class Step
 
   def formatted_answers
     "You can type one of the following: [#{@answer_paths.keys.join(", ")}]"
+  end
+
+  def code(&block)
+    code_blocks << block
   end
 
 end
