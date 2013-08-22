@@ -34,3 +34,5 @@ module Tuvi
   end
 
 end
+
+extend Tuvi
