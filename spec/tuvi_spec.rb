@@ -37,8 +37,8 @@ describe Tuvi do
 
     describe "answer" do
 
-      it "should assign answer paths based on answers passed in block" do
-        @program.step(1){answer "yes", 2}
+      it "should create an answer path with the key and the key should be downcased" do
+        @program.step(1){answer "Yes" => 2}
         @program.instance_eval{@steps[1]}.answer_paths["yes"].should == 2
       end
 

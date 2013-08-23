@@ -16,21 +16,21 @@ Here is a basic example program followed by an explanation:
 
     step 1 do
       message "Welcome to KrazyMaze. Will you ever get out? BWAAHAAA! You have a choice to make: Go right or left"
-      answer "right", 2
-      answer "left", 3
+      answer "right" => 2
+      answer "left" => 3
     end
 
     step 2 do
       message "You're in the middle of the maze. Go right or left or straight."
-      answer "right", 3
-      answer "left", 4
-      answer "straight", 3
+      answer "right" => 3
+      answer "left" => 4
+      answer "straight" => 3
     end
 
     step 3 do
       message "You've encountered a monster! You can either go straight, or punch the monster."
-      answer "straight", 2
-      answer "punch", 5
+      answer "straight" => 2
+      answer "punch" => 5
     end
 
     step 4 do
@@ -54,7 +54,7 @@ From here on in, the Tuvi language is used. As you can see, the program is divid
 
 Every step needs a `message`, which sets the computer's instructions for that step.
 
-Every step can establish one or more lines declaring an `answer` which is followed first by a valid user response, a comma, and then by the step number that that particular user response should lead to.
+Every step can establish one or more lines declaring an `answer` which is followed first by a valid user response, a hashrocket arrow, and then by the step number that that particular user response should lead to.
 
 Some steps, instead of having answers, can simply end the program using the `stop` keyword.
 
@@ -67,8 +67,8 @@ You can also add any custom Ruby code by placing it block passed to the `code` m
     step 1 do
       code {$steps = 1}
       message "Welcome to KrazyMaze. Will you ever get out? BWAAHAAA! You have a choice to make: Go right or left"
-      answer "right", 2
-      answer "left", 3
+      answer "right" => 2
+      answer "left" => 3
     end
 
     step 2 do
@@ -77,9 +77,9 @@ You can also add any custom Ruby code by placing it block passed to the `code` m
         puts "You have taken #{$steps} steps."
       end
       message "You're in the middle of the maze. Go right or left or straight."
-      answer "right", 3
-      answer "left", 4
-      answer "straight", 3
+      answer "right" => 3
+      answer "left" => 4
+      answer "straight" => 3
     end
 
 

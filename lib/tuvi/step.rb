@@ -17,8 +17,10 @@ class Step
     @message
   end
 
-  def answer(input, step_number)
-    @answer_paths[input.downcase] = step_number
+  def answer(answer_path)
+    answer = answer_path.first[0].downcase
+    next_step = answer_path.first[1]
+    @answer_paths[answer] = next_step
   end
 
   def stop
