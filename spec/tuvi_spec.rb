@@ -26,20 +26,20 @@ describe Tuvi do
 
     end
 
-    describe "message" do
+    describe "say" do
 
-      it "should assign a message based on message passed in block" do
-        @program.step(1){message "Hello!"}
-        @program.instance_eval{@steps[1]}.get_message.should == "Hello!"
+      it "should assign a say based on say passed in block" do
+        @program.step(1){say "Hello!"}
+        @program.instance_eval{@steps[1]}.get_say.should == "Hello!"
       end
 
     end
 
-    describe "answer" do
+    describe "response" do
 
-      it "should create an answer path with the key and the key should be downcased" do
-        @program.step(1){answer "Yes" => 2}
-        @program.instance_eval{@steps[1]}.answer_paths["yes"].should == 2
+      it "should create an response path with the key and the key should be downcased" do
+        @program.step(1){response "Yes" => 2}
+        @program.instance_eval{@steps[1]}.response_paths["yes"].should == 2
       end
 
     end

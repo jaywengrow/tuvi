@@ -16,20 +16,20 @@ class ApplicationRunner
     current_step.code_blocks.each do |block|
       block.call
     end
-    puts current_step.get_message
+    puts current_step.get_say
     exit if current_step.exit_program
-    puts current_step.formatted_answers
+    puts current_step.formatted_responses
     input = gets.downcase.chomp
     exit_program if input == "exit"
     determine_next_step(current_step, input)
   end
 
   def determine_next_step(current_step, input)
-    if current_step.answer_paths[input]
-      return current_step.answer_paths[input]
+    if current_step.response_paths[input]
+      return current_step.response_paths[input]
     end
 
-    puts "Sorry, I don't understand that answer. Please try again:"
+    puts "Sorry, I don't understand that response. Please try again:"
     current_step.id
   end
 

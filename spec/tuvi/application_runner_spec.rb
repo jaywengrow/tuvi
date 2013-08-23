@@ -4,7 +4,7 @@ describe ApplicationRunner do
 
   before(:each) do
     @step = Step.new(1) do
-      @answer_paths = {"yes" => 2}
+      @response_paths = {"yes" => 2}
     end
     @application_runner = ApplicationRunner.new([@step])
   end
@@ -13,7 +13,7 @@ describe ApplicationRunner do
 
     describe "determine_next_step" do
 
-      it "should determine the next step based on answer paths" do
+      it "should determine the next step based on response paths" do
         @application_runner.determine_next_step(@step, "yes").should == 2
       end
 
