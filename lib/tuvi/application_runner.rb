@@ -16,6 +16,7 @@ class ApplicationRunner
     current_step.code_blocks.each do |block|
       block.call
     end
+    puts
     puts current_step.get_say
     exit if current_step.exit_program
     puts current_step.formatted_responses
