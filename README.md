@@ -48,8 +48,6 @@ Here is a basic example program followed by an explanation:
 
 First, create a ruby file and on the first line require the Tuvi library with `require 'tuvi'`
 
-Then, create a class with any name you desire. The first thing to do inside this class is: `extend Tuvi`.
-
 From here on in, the Tuvi language is used. As you can see, the program is divided into steps, which represent a step in the program where the program provides some instructions, and either prompts the user for input or simply exits.
 
 Every step needs a `say`, which sets the computer's instructions for that step.
