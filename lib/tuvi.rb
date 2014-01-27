@@ -16,3 +16,4 @@ module Tuvi
 end
 
 extend Tuvi
+at_exit { run }

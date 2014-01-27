@@ -18,5 +18,3 @@ step 3 do
   say "You've reached the end!"
   stop
 end
-
-run

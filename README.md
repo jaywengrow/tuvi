@@ -43,9 +43,6 @@ Here is a basic example program followed by an explanation:
       stop
     end
 
-    run
-
-
 First, create a ruby file and on the first line require the Tuvi library with `require 'tuvi'`
 
 From here on in, the Tuvi language is used. As you can see, the program is divided into steps, which represent a step in the program where the program provides some instructions, and either prompts the user for input or simply exits.
@@ -55,8 +52,6 @@ Every step needs a `say`, which sets the computer's instructions for that step.
 Every step can establish one or more lines declaring an `response` which is followed first by a valid user response, a hashrocket arrow, and then by the step number that that particular user response should lead to.
 
 Some steps, instead of having responses, can simply end the program using the `stop` keyword.
-
-Finally, after all the steps have been declared (but still within the class), the `run` keyword actually runs the steps.
 
 You can run this file like any other Ruby file, using `ruby filename.rb`.
 
