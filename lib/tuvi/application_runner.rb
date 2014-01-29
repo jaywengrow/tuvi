@@ -5,7 +5,8 @@ class ApplicationRunner
   end
 
   def run
-    current_step_id = 1
+    puts "Welcome! Type 'exit' to quit at any time."
+    current_step_id = "start"
     while true do
       current_step_id = execute_step(current_step_id)
     end

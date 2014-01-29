@@ -28,7 +28,7 @@ class Step
   end
 
   def formatted_responses
-    "You can type one of the following: [#{@response_paths.keys.join(", ")}]. Enter 'exit' to quit."
+    "Choose a command: [#{@response_paths.keys.join(", ")}]"
   end
 
   def code(&block)
